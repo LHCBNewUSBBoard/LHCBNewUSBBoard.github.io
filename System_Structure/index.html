@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>System Structure - My Docs</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "System Structure";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">USBBoard for SiPM readout</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">System Structure</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#1-scintillating-fibre-tracker">1. Scintillating Fibre Tracker</a></li>
+                
+                    <li><a class="toctree-l4" href="#11-plastic-scintillating-fibres">1.1 Plastic Scintillating fibres</a></li>
+                
+                    <li><a class="toctree-l4" href="#12-silicon-photo-multiplier-sipm">1.2 Silicon Photo Multiplier SiPM</a></li>
+                
+                    <li><a class="toctree-l4" href="#13-fibre-mat-lhc-scifi-tracker">1.3 Fibre Mat &amp; LHC SciFi Tracker</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#2-electronics-readout">2. Electronics Readout</a></li>
+                
+                    <li><a class="toctree-l4" href="#21-flex">2.1 Flex</a></li>
+                
+                    <li><a class="toctree-l4" href="#22-pacific">2.2 PACIFIC</a></li>
+                
+                    <li><a class="toctree-l4" href="#23-spiroca">2.3 SpirocA</a></li>
+                
+                    <li><a class="toctree-l4" href="#24-newusbboard">2.4 NewUSBBoard</a></li>
+                
+                    <li><a class="toctree-l4" href="#25-scifi-module-readout">2.5 SciFi Module Readout</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Development_Process/">Development Process</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Operation_Manual/">Operation Manual</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../BugIssues_FreqAsks/">Bug Issues & Freq Asks</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>System Structure</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="1-scintillating-fibre-tracker">1. Scintillating Fibre Tracker</h1>
+<hr />
+<h2 id="11-plastic-scintillating-fibres">1.1 Plastic Scintillating fibres</h2>
+<p>Plastic scintillating fibres (PSF or SciFi) technology allows building intrinsically fast, low mass detectors with a high degree of geometrical adaptability, which have two functions:</p>
+<ol>
+<li>they convert the ionisation deposited by charged particles to optical photons</li>
+<li>they transport the optical signal to the readout devices which, in order to minimise the material budget, are often located outside the active volume</li>
+</ol>
+<h3 id="constitution">Constitution</h3>
+<p>A plastic scintillating fibre consists of a core, typically made of polystyrene (n = 1.59), and a
+thin cladding, made from polymers with lower refractive index, e.g. PMMA (plexiglass, n = 1.49)
+or a special fluorinated polymer (n = 1.42). The thickness of the cladding layer is typically 3% of
+the total diameter.</p>
+<h3 id="signal-generation">Signal Generation</h3>
+<p>Signal generation in a PSF is a multi-step process. Ionisation energy deposited in the core of the fibre leads to excitation of molecular levels (specifically of the so-called π electrons) in the benzene rings of the polymer chain. The relaxation time and scintillation light yield of polystyreneare however poor. An organic fluorescent dye with matched excitation energy levels is added to the polystyrene base (∼1% by weight) to improve the efficiency of the scintillation mechanism.</p>
+<p>Energy is transferred quite rapidly (sub-ns) from the base to this ’activator’ dye by means of a non-radiative dipole-dipole transmission, known as the Förster transfer, where the excited energy state of the dye will subsequently relax by emission of a photon. The activator dye is chosen to have a high quantum efficiency (&gt; 95%), a particular emission wavelength spectra, and fast decay time (less than a few ns). Often, a second wavelength shifting dye is admixed (∼0.05% by weight) which absorbs the photons from the activator (blue or UV) and remits them (isotropically) at longer wavelength (blue-green). In this wavelength range, the probability of re-absorption by the dyes is reduced and the photons profit from a generally better transparency of the polystyrene.</p>
+<h3 id="light-transport">Light Transport</h3>
+<p>Light transport in the fibre relies primarily on total internal reflection at the interface between the fibre core and the cladding structure. Meridional rays, i.e. those crossing the fibre axis, are totally reflected if their angle of incidence relative to the surface normal exceeds the critical angle θ <sub> crit </sub> = arcsin(n <sub> clad </sub> /n <sub> core </sub> ). The corresponding solid angle element also called trapping fraction, describes the fraction of isotropically emitted photons which will be transported towards one end of the fibre. For round fibres with a single cladding (n <sub> core </sub> = 1.59, n <sub> clad </sub> = 1.49), this fraction is 3.1%. With a second fluorinated cladding (n <sub> clad, fluor </sub> = 1.42),
+the fraction is increased to 5.3%. In practice, the trapping fraction is slightly larger, as also helical
+paths and light reflected at the cladding-air interface contribute, however only over relatively short transport distances.</p>
+<p><img alt="structure of scintillation fibre" src="../pics/Schematics_SciFi.jpg" title="structure of scintillation fibre" /></p>
+<p>Light transported along a fibre is attenuated following, in first approximation, an exponential law I = I<sub>0</sub>·e<sup>−z/Λ<sub>att</sub></sup> . The attenuation length Λ has various wavelength dependent contributions Λ<sub>1</sub>(λ), Λ<sub>2</sub>(λ) etc. which can be attributed to different phenomena like Rayleigh scattering, self absorption by the dyes and radiation induced defects. Essentially all effects show increased attenuation for short wavelength (blue, UV). Consequently, the emission spectrum of a fibre looses first its short component and therefore shifts towards longer, i.e. green and red, wavelengths. Particularly for long fibres this aspect has to be considered when selecting the optimum photosensor. Typical values for the attenuation length are of the order Λ att =3 ~ 5 m, averaged over the sensitivity window of a typical photosensor (400 ~ 600 nm)</p>
+<h3 id="radiation-tolerance-of-the-fibre">Radiation Tolerance of the Fibre</h3>
+<p>The decrease in light yield from irradiated plastic scintillators is attributed to two major causes:</p>
+<ol>
+<li>degraded transmission properties of the base plastic</li>
+<li>a degradation of the scintillating fluors.</li>
+</ol>
+<p>The second cause can usually be avoided by the choice of robust fluors that are added to the base scintillator material. Typically one or two stable compounds with large Stoke shifts and good quantum
+efficiency are chosen.</p>
+<p>The degraded optical transmission of the base plastic, typically polystyrene (PS), is a result of the creation of additional scattering and absorption centres produced during irradiation. These light loss centres are macromolecule radicals produced in the polymer under ionizing radiation. The increased attenuation of the light is stronger in the blue wavelengths with less effect in the green. To reduce the impact of this effect, the radiation hardness of scintillating fibres can be improved by choosing additional scintillating dyes with large Stoke’s shifts. It has also been observed that there is a radiation dose rate effect on the creation of certain types of attenuation centres which are dependent on the availability of oxygen within the fibre for production. Additionally, different types of attenuation centres have also been observed to decay over time, with time constants depending on the radical type and, for certain other types, the abundance of oxygen within the polystyrene matrix that can aid in annealing.</p>
+<p>As such, the total effect on the loss of light transmission depends on the particular environment within which the fibre is located, as well as the ionization rate to which the fibres are exposed.</p>
+<h2 id="12-silicon-photo-multiplier-sipm">1.2 Silicon Photo Multiplier SiPM</h2>
+<p>The SiPM is a silicon based photo detector, which is fast, compact and single photon sensitive.</p>
+<h3 id="constitution-signals">Constitution &amp; Signals</h3>
+<p>SiPM consists of many microscopic avalanche photon detectors (APDs) with typical sizes from 20 × 20 to 60 × 60 μm<sup>2</sup> , called pixels and connected in parallel to a macroscopic (few mm<sup>2</sup>area) channel. Each pixel is operated in Geiger Muller mode such that a single photon on the pixel will trigger a complete discharge (avalanche) with the release of the full charge. The discharge stops as the current is drawn via a quench resistor and the cell then recharges. The total signal of a SiPM is the sum of the charge of all triggered pixels.  SiPMs are operated at 2-3 volts overvoltage. Given an internal pixel capacitance C pixel of typically 50 fF, the charge collected for one photoelectron signal is approximately 1.2 pC (equivalent to ≈ 7.5 · 10<sup>5</sup> electrons). The SiPM offers a very fast response with a typical rise time of 3-5 ns. The dynamic range is determined by the finite number of pixels.</p>
+<p><img alt="SiPM" src="../pics/SiPM.jpg" title="SiPM" /></p>
+<h3 id="signal-gain">Signal Gain</h3>
+<p>The charge produced in a single pixel corresponds to the gain G = Q/e. The gain depends on the surface of the pixel, the thickness of the amplification region which determines the capacity and the operation voltage above the avalanche limit (∆V ): G=C·∆V/e. Different technologies will provide gains for 50 × 50 μm<sup>2</sup> a pixels from 10<sup>6</sup> to 10<sup>7</sup>.</p>
+<h3 id="noise-dark-count-rate">Noise &amp; Dark Count Rate</h3>
+<p>Impurities and thermal generation of free charges are responsible for a permanent rate of avalanches that are not induced by photons. This results in a Dark Count Rate (DCR) which is typically of the order of several 100 kHz/mm<sup>2</sup>. For SciFi applications, detection of single photons is required. With a detection threshold set to 0.5 PE, a dark noise signal is a priori indistinguishable from a photon induced signal.</p>
+<p>Other noise sources are the after-pulses which are due to temporarily trapped charges near the avalanche region. The after-pulses occur delayed after the primary avalanche, i.e. at a time when the pixel is usually still recovering. Their amplitude depends therefore on the delay and is generally smaller than a single PE pulse. A very significant effect for SciFi applications is the optical cross talk (x-talk). During the avalanche in a pixel, a large number of Infrared Radiation photons are produced. Silicon is is largely transparent to IR and allows these photons to reach neighbouring pixels and trigger there secondary avalanches. X-talk produces signals at the same time as the primary avalanche. Over the past decade, the SiPM manufacturers have made significant progress in reducing the DCR by material and design optimizations. The best devices show now at room temperature f<sub>DCR</sub> =100 kHz/mm<sup>2</sup>.</p>
+<p>Like other silicon devices, SiPM are sensitive to the so-called Non Ionising Energy Loss (NIEL) which leads to damage of the silicon lattice and as a consequence a large increase of the DCR and the associated leakage current. The DCR increases linearly with the particle fluence (usually expressed in the number of 1 MeV neutron equivalent particles per cm<sup>2</sup>) and rapidly reaches levels where the initial DCR is insignificant. In a SciFi tracker, where single photon sensitivity must be maintained, the DCR can only be coped with by reducing the operational temperature which reduces it by a factor 2 typically every 10 K.</p>
+<h2 id="13-fibre-mat-lhc-scifi-tracker">1.3 Fibre Mat &amp; LHC SciFi Tracker</h2>
+<p>Blue emitting scintillating plastic fibres of type SCSF-78MJ from Kuraray with 250 μm diameter are arranged in a staggered close-packed geometry to 6-layer fibre mats. The mats are 2.4 m long and mirror coated at the non-read end. The scintillation light exiting at the other end is detected by linear arrays of SiPM detectors (128 channels of 0.25 x 1.6 mm<sup>2</sup> size). The height of a SiPM channel (1.6 mm) extends over all 6 layers of the fibre mat. The pitch (0.25 mm) allows resolving the clusters of hit fibres of typically 2 or 3 channels width.</p>
+<p><img alt="Fibre mat" src="../pics/fiber_mat.jpg" title="fiber mat" /></p>
+<p>The combination of small diameter scintillating plastic fibres with arrays of SiPM photodetectors has lead to a new class of SciFi trackers usable at high luminosity collider experiments. The LHCb SciFi Tracker is part of a major upgrade campaign of the LHCb detector to allow operation during the LHC Run 3, i.e. from 2019 onward, at a levelled luminosity of 2 × 10<sup>33</sup>cm<sup>−2</sup>s<sup>−1</sup> and at a readout rate of 40 MHz (bunch crossings every 25 ns). It consists of three tracking stations with four independent planes each (X-U-V-X, stereo angle ±5<sup>◦</sup>) and extends over 6 m in width and 4.8 m in height, as seen in Figure 4.</p>
+<p><img alt="Fiber Mat&amp;SciFi tracker" src="../pics/LHC_SciFi_tracker.png" title="LHC SciFi tracker" /></p>
+<hr />
+<h1 id="2-electronics-readout">2. Electronics Readout</h1>
+<hr />
+<h2 id="21-flex">2.1 Flex</h2>
+<p>The scintillating fibre ribbons are connected to the SiPM arrays, which in turn are connected to the front-end electronics through flex-PCB cables with a length of about 100 mm, as shown in Fig. 3.40.  The flexibility is required to make a 90 degree bend in order to connect the SiPMs to the Front-end (FE) boards located outside the cold volume. Cooling pipes for a liquid cooling system must also be fed through this enclosure to keep the silicon photo-detectors at -40 degree. Each detector is mounted on a separate flex-PCB and attached with connectors to the FE board.</p>
+<p><img alt="FLex-PCB" src="../pics/Flex.jpg" title="FLex-PCB" /></p>
+<p>An aluminium stiffener is glued to the back side of the detector region where it allows a good thermal contact to be made with the cooling pipe. The stiffeners also play a role of “heat spreaders”, providing a uniform temperature profile over a SiPM array. If required, the stiffener could also be implemented with a material that matches the detector substrate. A passive temperature sensor (NTC or PT1000) is mounted on the back side of the detector where a cut-out in the stiffener is foreseen. The temperature sensor is connected via the flex-PCB to the FE board and can be accessed by the slow control.  The temperature di↵erence between detectors on the same super-array needs to be within 1K to ensure good gain uniformity while using only one bias voltage per super-array. The bias voltage (~60V/1mA) is provided via the flex-PCB to the detector.</p>
+<h2 id="22-pacific">2.2 PACIFIC</h2>
+<p>All SiPM signals are amplified, shaped and digitised in the ASICs held on the front-end board. VATA64 and SPIROC are two commercial available ASICs, and the PACIFIC is being designed to meet the extra need and will be the final solution for the LHC SciFi tracker readout. As the PACIFIC is still under test, SpirocA with NewUSBBoard Readout is the temporary solution.</p>
+<p>PACIFIC, low-Power ASIC for the sCIntillating Fibre traCker, is being developed to process and digitise the analogue signal from the SiPM. It has four functions and is composed by four components:</p>
+<p><img alt="PACIFIC" src="../pics/PACIFIC.jpg" title="PACIFIC" /></p>
+<ol>
+<li>an input stage for amplification</li>
+<li>a faster shaper for shaping</li>
+<li>two interleaved gated intergrators for integrating</li>
+<li>a 2-bit ADC sampling at 40MHz for digitisation</li>
+</ol>
+<h3 id="input-stage">Input Stage</h3>
+<p>The input stage is a current mode preamplifier(current conveyor) with the current flowing from the SiPM anode to the circuit. It has high bandwidth(250MHz), low input impedance(20 Ω&lt; Z <sub>in</sub> &lt;40 Ω). The gain of the current conveyor is tunable by a factor of four through controllable DC voltage to deal with different SiPMs and different opearting conditions.</p>
+<h3 id="shaper">Shaper</h3>
+<p>The detector signals extend over several clock period because of light generation and propagation in the fibre and SiPM recovery. The shaper performs tail cancellation prior to gated intergration in order to minimise the spill over and the fluctuation of the integrated signal as function of the signal arrival time, i.e. to achieve a suffiient integration plateau.</p>
+<p>The implementation consists of a double pole-zero shaper. The first time constant cancels the slowest time constant of the SiPM response, the one associated to the internal SiPM capacitances and quenching resistor. The second one cancels the fastest one which is related to the parasitic interconnect capacitance and the input impedance of the preamplifier. The pole and zero frequency of both shapers are tunable, and they have been calculated to be able to operate with the very different time constants of the Ketek and Hamamatsu SiPMs.</p>
+<h3 id="the-interleaved-gated-integrator">The Interleaved Gated Integrator</h3>
+<p>Two interleaved gated integrators are used to avoid any dead time during the acquisition, when the first integrator is working, the second one is reset and vice versa. Each gated integrator works at a frequency of 20MHz in order to fit in the 40MHz general frequency. The ADC will convert the value at the output of the integrator each 25ns just before the ADC switches from one integrator to the other one. With this solution, the integration is still available at the output of the channel even if the signal arrives between two clock cycles.</p>
+<h3 id="pulse-height-information-using-comparators">Pulse-height information using comparators</h3>
+<p>The digitisation of the analogue signal from the gated integrators is done with a 2-bit flash ADC with a non linear scale running at 40MS/s. Hence, three comparators are used with their individual threshold, named Seed, Neighbour and High threshold. They are individually set using a 6-bit DAC. Moreover, the threshold value is configurable for each SiPM channel in order to be able to cope with the gain variation and the pedestals. These three thresholds are used in clusterisation algorithm, which is illustrated in Fig. 3.51, and uses four thresholds:</p>
+<p><img alt="clusterisation algorithm" src="../pics/clusterisation.jpg" title="clusterisation algorithm" /></p>
+<ul>
+<li>The seed threshold: The first step in the clustering algorithm is to find cluster candidates. The seed threshold is a necessary but not suffcient condition for a cluster. For a channel found above the seed threshold, its neighbours need to be tested.</li>
+<li>The neighbour threshold: To include a maximum of the signal the neighbours to a channel above the seed threshold can be tested with a lower threshold. All channels above the neighbour threshold are included in a cluster.</li>
+<li>The high threshold: Channels with strong signal above the high threshold are sufficient to form a cluster without any other conditions.</li>
+<li>The cluster sum threshold: There are two possibilities to confirm a cluster. One, if a channel in the cluster has reached the high threshold. Two, if a cluster contains a seed threshold channel and at least one more other channel above the neighbour threshold. This last step allows to remove a large fraction of the SiPM noise. The cluster position is calculated by computing the barycentre b using a weighted average with a 2-bit inter-channel precision.</li>
+</ul>
+<p>Finally, the data recorded for each cluster are its position, a 7-bit SiPM channel number and a 2-bit inter strip position corresponding to 1/4 of a strip pitch; the number of hits in the cluster; and the total signal, the sum of the ADC values of the neighbouring strips.</p>
+<h2 id="23-spiroca">2.3 SpirocA</h2>
+<p>SPIROC is an auto-triggered, bi-gain, 36-channel ASIC which allows to measure on each channel the charge from one photoelectron to 2000 and the time with a 100ps accurate TDC.  The integrated ASIC components allow 16 selectable pre-amplification gain factors (with output gain values from 3 to 100 mV/pC), and seven CR(RC)<sup>2</sup> shaping times from 25 to 175 ns. After shaping, the signal is held (under the control of signal hold) at its maximum amplitude with a track and hold method. An analogue memory array with a depth of 16 for each channel is used to store the time information and the charge measurement. The data are then stored in a 4 kbytes RAM. An adjustable 8-bit DAC (0-4.5 V) in the ASIC allows individual adjustment of the SiPM forward voltage for each one of the 36 channels.</p>
+<p>A schematic view of a single channel of the ASIC chip is given below:
+<img alt="SpirocA channel structure" src="../pics/SpirocA.jpg" title="SpirocA channel structure" /></p>
+<h2 id="24-newusbboard">2.4 NewUSBBoard</h2>
+<p>USBBoard is designed to control, digitize and readout multichannel readout ASICs for SiPM detectors.</p>
+<p>The typical data acquisition setup is:
+The small signal (typically 10<sup>6</sup> electrons per photo electron of the SiPM detectors) is pre-amplifiered and shaped through a integrated multichannel front-end chips, such as SpirocA or VATA64. The front-end ASIC acts as a signal amplifier and analog signal multiplexer and connects with the USBBoard through a uplink-cable. The ASIC is controlled via a simple protocol using a Hold, Shift, Clk and Analog_output signal. The Analog_output which is sampled under the control of Hold signal carries the data information from the SiPMs. The digital interface to control the output multiplexer is implemented via a local FPGA which acts as glue logic and signal interpreter between USBBoard Up-Link and ASIC digital interface.</p>
+<p>The structure of the Front End ASIC is showed in the figure below.</p>
+<p><img alt="Front End ASIC structure" src="../pics/FE_ASIC.png" title="Front End ASIC structure" /></p>
+<p>The USBBoard is also responsible to send the AMS2 Up-link protocol and perform digitization via the ADC chips on board. Then the digital signal is stored in a FIFO in the FPGA, tagged with some event information (header) and passed to the host computer via QuickUSB module. The USBBoard has SPI control interfaces for parameter setup of the SPIROC chip and provides the low voltage power for the readout chip via Up-link interface. Also the bias voltage for the detector can be applied via USBBoard front panel connector. The USB board provides 8 Up-Link connectors which are all on the same power potential but isolated to the secondary electronics part responsible for the digital data acquisition via FPGA and USB interface.</p>
+<p><img alt="Schematics of the USB board implementation" src="../pics/NewUSBBoard.png" title="Schematics of the USB board implementation" /></p>
+<p>The most important features and components of the board are given below, details of the NewUSBBoard hardware and firmware are in the Section "Development Process".</p>
+<ul>
+<li>USB 2.0 interface based on a plug in module from QuickUSB, drivers and API for Labview and c-code are given by <a href="http://www.bitwisesys.com">QuickUSB</a></li>
+<li>An Altera CyclonIV FPGA (type EP4CE75F23I8L), core voltage 1.0V</li>
+<li>8 channels of 12-bit ADCs (type ADS803), the sampling clock is limited to 5MHz by the ADC, there is a pin compatible ADC reaching 20MHz (ADS805). Even the ADC sampling clock is set to 5MHz, the sample is only available with a delay of 6 clock cycles.</li>
+<li>8 Up-linkV3 Connectors. The connector provides the analog signal interface (2 analog signals out+ and out-), low voltage (+-2V), Bias voltage (GRING) and other control signals.</li>
+<li>2 SPI interface connectors, 6-pin for only 1 slave select, 8-pin for 4 save select</li>
+<li>Flash chip EPCS64 is used and the FPGA will be configured automatically after power on.</li>
+<li>Three different Front-end Board are supported, includes VA32, VA64 and SpirocA. Jumpers are needed to choose the right Front-end board.</li>
+</ul>
+<h2 id="25-scifi-module-readout">2.5 SciFi Module Readout</h2>
+<p>The SciFi Module Readout which is composed of SpirocA and NewUSBBoard is showed below:</p>
+<p><img alt="SpirocA with NewUSBBoard" src="../pics/SpirocA_NewUSBBoard.jpg" title="The SciFi Module Readout System" /></p>
+<p>We defined that one SciFi Module Readout System includes:<br />
+1×USBBoard + 2×SpirocA Cards + 1×Adapter Cards</p>
+<p>One SpirocA Card will have 8 SpirocA chips on board, each SpirocA can readout 32 channels, so one SpirocA Card will readout 256 channels in total.<br />
+One Single SciFi Module Readout System can readout up to 4 SiPMs, this corresponds to 1 Fibre Mat.<br />
+Each SpirocA Card will be routed to 1 uplink on the USBBoard, which has a 12-bit ADC to sample and digitalize the signals.<br />
+The USBBoard have 8 uplinks, this means one USBBoard can readout 16 SiPMs, which corresponds to half of the SciFi Module.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Development_Process/" class="btn btn-neutral float-right" title="Development Process"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="USBBoard for SiPM readout"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Development_Process/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

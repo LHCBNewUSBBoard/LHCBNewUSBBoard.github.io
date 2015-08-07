@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Development Process - My Docs</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Development Process";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">USBBoard for SiPM readout</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../System_Structure/">System Structure</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Development Process</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#1-hardware-">1. --------------Hardware--------------</a></li>
+                
+                    <li><a class="toctree-l4" href="#11-development-tools-projects">1.1 Development Tools &amp; Projects</a></li>
+                
+                    <li><a class="toctree-l4" href="#12-newusbboard-with-piggyback">1.2 NewUSBBoard with piggyback</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#2-firmware-">2. --------------Firmware--------------</a></li>
+                
+                    <li><a class="toctree-l4" href="#21-development-tools">2.1 Development Tools</a></li>
+                
+                    <li><a class="toctree-l4" href="#21-development-process">2.1 Development Process</a></li>
+                
+                    <li><a class="toctree-l4" href="#22-description-of-global-registers">2.2 Description of Global Registers</a></li>
+                
+                    <li><a class="toctree-l4" href="#23-external-vs-internal-trigger">2.3 External vs Internal Trigger</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#3-software-">3. --------------Software--------------</a></li>
+                
+                    <li><a class="toctree-l4" href="#31-development-tools-chains">3.1 Development Tools &amp; Chains</a></li>
+                
+                    <li><a class="toctree-l4" href="#32-cfgfile">3.2 cfgFile</a></li>
+                
+                    <li><a class="toctree-l4" href="#33-readout-test-system">3.3 Readout Test System</a></li>
+                
+                    <li><a class="toctree-l4" href="#34-data-analysis-system">3.4 Data Analysis System</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Operation_Manual/">Operation Manual</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../BugIssues_FreqAsks/">Bug Issues & Freq Asks</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Development Process</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="1-hardware-">1. <strong>--------------Hardware--------------</strong></h1>
+<h2 id="11-development-tools-projects">1.1 Development Tools &amp; Projects</h2>
+<h3 id="altium-designer">Altium Designer</h3>
+<p>Projects listed below are developed with Altium Designer (Version 15.0.7):</p>
+<ul>
+<li>NewUSBBoard -- database/hardware/ADBV2</li>
+<li>NewUSBBoard piggyback  -- database/hardware/ADB-PiggybackV2.0</li>
+</ul>
+<h3 id="cadence">Cadence</h3>
+<p>Project listed below are developed with Cadence:</p>
+<ul>
+<li>SpirocA board -- database/hardware/HPE-SPIROCA-256-LHCB</li>
+<li>Laser Driver board -- database/hardware/LaserDriver</li>
+<li>PACIFIC board</li>
+</ul>
+<h2 id="12-newusbboard-with-piggyback">1.2 NewUSBBoard with piggyback</h2>
+<h3 id="external-trigger-busy">External Trigger &amp; Busy</h3>
+<p>The middle pin of the jumpers "NIM_TRIG" and "NIM_BUSY" in piggyback board  are the TTL signals for TRIG_OUT and BUSY_OUT.</p>
+<h3 id="external-led-pulse">External LED Pulse</h3>
+<p>The middle pin of the jumper "ADB_TP" in piggyback board is the TTL Pulse for laser driver.</p>
+<h3 id="power-supply">Power Supply</h3>
+<p>The power supply of the NewUSBBoard is divided into:</p>
+<ul>
+<li>Digital power for the acquisition FPGA and USB interface +D3.3V (1A). This power supply is isolated from all other power supplies via magneto couplers.  </li>
+<li>Analog power is different for different front-end board. Jumpers are used to select the exact type of FE board:  <blockquote>
+<ul>
+<li>W1+W4 , 1&amp;2 in APWR_SET are connected -- VA64  </li>
+<li>W2+W5 , 1&amp;2 in APWR_SET are connected -- VA32  </li>
+<li>W3+W6 , 3&amp;4 in APWR_SET are connected -- SPIROC
+<img alt="ADB Power Supply" src="../pics/ADB_power_supply.png" title="ADB Power Supply" /></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="2-firmware-">2. <strong>--------------Firmware--------------</strong></h1>
+<h2 id="21-development-tools">2.1 Development Tools</h2>
+<h3 id="hdl-designer-20121">HDL Designer 2012.1</h3>
+<p>Download link: <a href="https://www.dropbox.com/sh/y4ez3cina23jm0n/AABKDodnH0p8M3dCEn6UZaN6a?dl=0">HDS_2012_1</a></p>
+<h3 id="quartus-120">Quartus 12.0</h3>
+<p>Download link <a href="https://www.dropbox.com/sh/8u0c2a4gspacje9/AABWuuPtDBv_I5enYoXupX1ea?dl=0">Quartus_12_0</a></p>
+<h2 id="21-development-process">2.1 Development Process</h2>
+<h3 id="edit-source-code">Edit Source Code</h3>
+<p>Download the souce code from https://bitbucket.org/</p>
+<ol>
+<li>Make a new directory D:\NewUSBBoard</li>
+<li>cd D:\NewUSBBoard</li>
+<li>git clone https://lihm09@bitbucket.org/XiaoxueHAN/usbboard_firmware.git firmware</li>
+<li>Set the environment variables</li>
+<li>Run D:\NewUSBBoard\firmware\Setup_Env\SET_ENV_VAR.bat as Administrator.</li>
+<li>Edit source code in the HDL Designer.</li>
+</ol>
+<h3 id="synthesis-in-hdl-designer">Synthesis in HDL Designer</h3>
+<p>USB_Board_TOP_tb-&gt;struct-&gt;U_0 is the top file of the project.<br />
+USB_Board_TOP_tb-&gt;struct-&gt;U_1 is the testbench, which can only be used for simulating.</p>
+<p><img alt="HDS Project" src="../pics/HDS_Project.jpg" title="HDS Proejct" /></p>
+<p>In “FPGA Technology Setup” choose the options:
+<img alt="HDS Technology Setup" src="../pics/HDS_Tech_Setup.jpg" title="HDS Technology Setup" /></p>
+<p>In "FPGA Synthesis Settings" choose the options:
+<img alt="HDS Synthesis Settings" src="../pics/HDS_Syn_Set.jpg" title="HDS Synthesis Settings" /></p>
+<p>Choose U_0 and click “Generate and runs the entires Quartus QIS Synthesis flow” to synthesis the project, then wait for Synthesis completed.</p>
+<h3 id="implementation-in-quartus">Implementation in Quartus</h3>
+<ol>
+<li>
+<p>Open Quartus and the project file PEBSino_USB_Board\qis\@u@s@b_@board_@t@o@p_struct\USB_Board_TOP.qpf .</p>
+</li>
+<li>
+<p>Run the command below in the Tcl console, the file will set the type of the device and all the pin planning &amp; constrains.</p>
+<blockquote>
+<p>source USB_Board_TOP.tcl</p>
+</blockquote>
+</li>
+<li>
+<p>Start compilation.</p>
+</li>
+</ol>
+<h3 id="program-the-fpga">Program the FPGA</h3>
+<ul>
+<li>Use JTAG and *.sof to program the FPGA for preliminary tests.</li>
+<li>Use ISP interface to program the flash  </li>
+<li>Use "Convert Programming Files" to generate .jic file to program the flash<br />
+(flash device is EPCS64, FPGA device is EP4CE75F23I8L)  </li>
+<li>The FPGA can also be programed using the software tools through QuickUSB module. See "3.2 Readout Test System" for details.</li>
+</ul>
+<h2 id="22-description-of-global-registers">2.2 Description of Global Registers</h2>
+<p>A set of control and monitor registers are provided. Below a description of its functionality is given. All the registers are accessed in the high speed mode. For the access to the registers, two tools in the scifiusbboard/Builds/ are used:</p>
+<blockquote>
+<p><code>./readoutDebugtool -r reg_address</code><br />
+<code>./readoutDebugtool -w reg_address reg_value</code></p>
+</blockquote>
+<h4 id="reg0-addr0x0000-control-register">Reg0, addr=0x0000, Control Register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">2..0</td>
+<td align="center">R/W</td>
+<td align="center">FE_Type</td>
+<td align="left">Select the Front-End card</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">R/W</td>
+<td align="center">self_trigger_enable</td>
+<td align="left">0: Enable external trigger <br>1: Enable internal trigger</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">R/W</td>
+<td align="center">ext_trigger_sel</td>
+<td align="left">0: External trigger comes from ExtCon<br>1: External trigger comes from BK</td>
+</tr>
+<tr>
+<td align="center">15..5</td>
+<td align="center">R/W</td>
+<td align="center">Reserved</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Signal Name</th>
+<th align="center">Value</th>
+<th>Front-End card</th>
+<th align="center">number of sampers per Up-link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FE_Type</td>
+<td align="center">0b000</td>
+<td>VA32</td>
+<td align="center">128</td>
+</tr>
+<tr>
+<td>FE_Type</td>
+<td align="center">0b001</td>
+<td>SPIROC_EPFL</td>
+<td align="center">36</td>
+</tr>
+<tr>
+<td>FE_Type</td>
+<td align="center">0b010</td>
+<td>SPIROC_Aachen</td>
+<td align="center">128</td>
+</tr>
+<tr>
+<td>FE_Type</td>
+<td align="center">0b011</td>
+<td>AMS_K_ladder</td>
+<td align="center">6x64</td>
+</tr>
+<tr>
+<td>FE_Type</td>
+<td align="center">0b100</td>
+<td>AMS_S_ladder</td>
+<td align="center">5x64</td>
+</tr>
+<tr>
+<td>FE_Type</td>
+<td align="center">0b101</td>
+<td>HPE_VA256</td>
+<td align="center">256</td>
+</tr>
+<tr>
+<td>FE_Type</td>
+<td align="center">0b110</td>
+<td>SPIROC_A</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td>FE_Type</td>
+<td align="center">0b111</td>
+<td>VATA64_EPFL</td>
+<td align="center">64</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg1-addr0x0001-control-register">Reg1, addr=0x0001, Control Register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">R/W</td>
+<td align="center">reset_daq_reg</td>
+<td align="left">Reset the DAQ part of the board, including FIFOs and FSM.</td>
+</tr>
+<tr>
+<td align="center">15..1</td>
+<td align="center">R/W</td>
+<td align="center">Reserved</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg2-addr0x0002-control-register">Reg2, addr=0x0002, Control Register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">R/W</td>
+<td align="center">FE_CLock_Mode</td>
+<td align="left"><code>Set Front-End Board Clock Mode??</code></td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">R/W</td>
+<td align="center">manual_set_busy</td>
+<td align="left">’0’=normal operation ,’1’=set the busy<br>can be used to test the busy connection or gate the trigger during setup</td>
+</tr>
+<tr>
+<td align="center">15..2</td>
+<td align="center">R/W</td>
+<td align="center">Reserved</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg3addr0x0003-fifo-monitor-register">Reg3,addr=0x0003, Fifo monitor register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">R</td>
+<td align="center">fifo_usedw(16)</td>
+<td align="left">17th bit of Used word of the input FIFOs, it is the same for all FIFOs</td>
+</tr>
+<tr>
+<td align="center">12..1</td>
+<td align="center">R</td>
+<td align="center">Reserved</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">R</td>
+<td align="center">fifo_almost_full</td>
+<td align="left">Indicates that the FIFO can not receive any more events</td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center">R</td>
+<td align="center">fifo_underflow</td>
+<td align="left">fifo underflow</td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center">R</td>
+<td align="center">fifo_overflow</td>
+<td align="left">fifo overflow</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg4addr0x0004-fifo-monitor-register">Reg4,addr=0x0004, Fifo monitor register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">15..0</td>
+<td align="center">R</td>
+<td align="center">fifo_usedw(15 to 0)</td>
+<td align="left">0~15 bit of Used word of the input FIFOs, it is the same for all FIFOs</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg5addr0x0005-event-id-monitor-register">Reg5,addr=0x0005, Event ID monitor register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="left">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">15..0</td>
+<td align="center">R</td>
+<td align="left">event_ID</td>
+<td align="left">The Event ID counter at the current time.<br>Note that this counter can increase very fast.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg6addr0x0006-version-monitor-register">Reg6,addr=0x0006, Version monitor register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..7</td>
+<td align="center">R</td>
+<td align="center">FW_VERSION_DEFAULT</td>
+<td align="left"><code>Not Used???</code></td>
+</tr>
+<tr>
+<td align="center">8..14</td>
+<td align="center">R</td>
+<td align="center">Reserved</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center">R</td>
+<td align="center">DATA_TYPE</td>
+<td align="left"><code>Not Used???</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg7addr0x0007-delay-value-register">Reg7,addr=0x0007, Delay Value register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..15</td>
+<td align="center">R/W</td>
+<td align="center">fifoWriteDelay</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg8addr0x0008-delay-value-register">Reg8,addr=0x0008, Delay Value register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..15</td>
+<td align="center">R/W</td>
+<td align="center">delay_after_readout</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg9addr0x0009-delay-value-register">Reg9,addr=0x0009, Delay Value register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..15</td>
+<td align="center">R/W</td>
+<td align="center">SELF_trig_lead_time(31 to 16)</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg10addr0x000a-delay-value-register">Reg10,addr=0x000A, Delay Value register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..15</td>
+<td align="center">R/W</td>
+<td align="center">SELF_trig_lead_time(15 to 0)</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg11reg18-addr0x000b-0x0012-8-data-header-registers">Reg11~Reg18, addr=0x000B ~ 0X0012, 8 data header registers</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..15</td>
+<td align="center">R/W</td>
+<td align="center">data_header</td>
+<td align="left"><code>start from data_header(1)??</code><br> Each Up-Link has its individual header word which is stored in one of the 8 registers</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg19addr0x0013-self-trigger-period-register">Reg19,addr=0x0013, Self Trigger Period register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..15</td>
+<td align="center">R/W</td>
+<td align="center">SELF_TRIG_PERIOD(31 to 16)</td>
+<td align="left">Self Trigger Period = Register Value * 25 ns</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg20addr0x0014-self-trigger-period-register">Reg20,addr=0x0014, Self Trigger Period register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..15</td>
+<td align="center">R/W</td>
+<td align="center">SELF_TRIG_PERIOD(15 to 0)</td>
+<td align="left">Self Trigger Period = Register Value * 25 ns</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg21addr0x0015-qspi-register">Reg21,addr=0x0015, QSPI register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..9</td>
+<td align="center">R/W</td>
+<td align="center">QSPI_start_addr</td>
+<td align="left">QSPI start address</td>
+</tr>
+<tr>
+<td align="center">10..13</td>
+<td align="center">R/W</td>
+<td align="center">Reserved</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center">R/W</td>
+<td align="center">QSPI_repeat_enable</td>
+<td align="left">QSPI repeat enable</td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center">R/W</td>
+<td align="center">QSPI_busy</td>
+<td align="left">QSPI busy</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg22addr0x0016-qspi-register">Reg22,addr=0x0016, QSPI register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..9</td>
+<td align="center">R/W</td>
+<td align="center">QSPI_end_addr</td>
+<td align="left">QSPI end address</td>
+</tr>
+<tr>
+<td align="center">10..15</td>
+<td align="center">R/W</td>
+<td align="center">Reserved</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg23addr0x0017-qspi-register">Reg23,addr=0x0017, QSPI register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..11</td>
+<td align="center">R/W</td>
+<td align="center">QMR(11 to 0)</td>
+<td align="left"><code>QMR???</code></td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">R/W</td>
+<td align="center">Reserved</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">12..15</td>
+<td align="center">R/W</td>
+<td align="center">QMR(15 to 13)</td>
+<td align="left"><code>QMR???</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg24addr0x0018-qspi-register">Reg24,addr=0x0018, QSPI register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..15</td>
+<td align="center">R/W</td>
+<td align="center">QDLYR</td>
+<td align="left"><code>QDLYR???</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg25addr0x0019-bias-voltage-1-spi-control-register">Reg25,addr=0x0019, Bias Voltage 1 SPI control register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..15</td>
+<td align="center">R/W</td>
+<td align="center">VB1_cTx</td>
+<td align="left">SPI control register for Bias Voltage 1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg26addr0x001a-bias-voltage-2-spi-control-register">Reg26,addr=0x001A, Bias Voltage 2 SPI control register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..15</td>
+<td align="center">R/W</td>
+<td align="center">VB2_cTx</td>
+<td align="left">SPI control register for Bias Voltage 2</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg27addr0x001b-hold-delay-time-register">Reg27,addr=0x001B, Hold delay time register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..15</td>
+<td align="center">R/W</td>
+<td align="center">hold_delay_time</td>
+<td align="left">hold delay time</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg28addr0x001c-hold-type-register">Reg28,addr=0x001C, Hold type register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..7</td>
+<td align="center">R/W</td>
+<td align="center">hold_type</td>
+<td align="left">hold type</td>
+</tr>
+<tr>
+<td align="center">7..15</td>
+<td align="center">R/W</td>
+<td align="center">Reserved</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg29addr0x001d-qspi-register">Reg29,addr=0x001D, QSPI register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..15</td>
+<td align="center">R/W</td>
+<td align="center">QSPI_PERIOD(31 to 16)</td>
+<td align="left">QSPI Period</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg30addr0x001e-qspi-register">Reg30,addr=0x001E, QSPI register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..15</td>
+<td align="center">R/W</td>
+<td align="center">QSPI_PERIOD(15 to 0)</td>
+<td align="left">QSPI Period</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg31addr0x001f-light-injection-i2c-register">Reg31,addr=0x001F, Light Injection I2C register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">R/W</td>
+<td align="center">LI_i2c_dis</td>
+<td align="left">0:Light Injection Module Enable<br>1:Light Injection Module Enable</td>
+</tr>
+<tr>
+<td align="center">7...1</td>
+<td align="center">R/W</td>
+<td align="center">LI_i2c_slave_wr_adr</td>
+<td align="left">1~7 bit of Light Injection Module I2C slave write address</td>
+</tr>
+<tr>
+<td align="center">8...15</td>
+<td align="center">R/W</td>
+<td align="center">LI_i2c_slave_rd_adr</td>
+<td align="left">Light Injection Module I2C slave read address = write address&amp;'0'</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg32addr0x0020-light-injection-i2c-register">Reg32,addr=0x0020, Light Injection I2C register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..13</td>
+<td align="center">R/W</td>
+<td align="center">Reserved</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center">R/W</td>
+<td align="center">LI_i2c_wr_done</td>
+<td align="left">1: i2c write operation has finished.</td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center">R/W</td>
+<td align="center">LI_i2c_err</td>
+<td align="left">1: error happens during i2c operation</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg33addr0x0021-light-injection-i2c-register">Reg33,addr=0x0021, Light Injection I2C register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..7</td>
+<td align="center">R/W</td>
+<td align="center">LI_i2c_reg_rd_dat</td>
+<td align="left">The value read by i2c operation</td>
+</tr>
+<tr>
+<td align="center">8..13</td>
+<td align="center">R/W</td>
+<td align="center">Reserved</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center">R/W</td>
+<td align="center">LI_i2c_err</td>
+<td align="left">1: error happens during i2c operation</td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center">R/W</td>
+<td align="center">LI_i2c_rd_done</td>
+<td align="left">1: i2c read operation has finished.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reg34addr0x0022-light-injection-pulse-width-register">Reg34,addr=0x0022, Light Injection Pulse Width register</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Bits</th>
+<th align="center">Access</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0..7</td>
+<td align="center">R/W</td>
+<td align="center">LI_phase_adj</td>
+<td align="left">Adjust the pulse width for the light injection module, need calibration</td>
+</tr>
+<tr>
+<td align="center">8..13</td>
+<td align="center">R/W</td>
+<td align="center">Reserved</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="qspi-block-address">QSPI block address</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Start Address</th>
+<th align="center">End Address</th>
+<th align="center">Signal Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0x0400</td>
+<td align="center">0x0800</td>
+<td align="center">qspi_tx_rdback</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">0x0800</td>
+<td align="center">0x0C00</td>
+<td align="center">qspi_cmd_rdback</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">0x0C00</td>
+<td align="center">0x1000</td>
+<td align="center">qspi_rx_rdback</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="23-external-vs-internal-trigger">2.3 External vs Internal Trigger</h2>
+<p>The data acquisition is driven by a trigger signal which can be used and generated in two different ways.</p>
+<h3 id="internal-trigger">Internal Trigger</h3>
+<p>A trigger is generated by the NewUSBBoard itself in this mode. It is usually used in the calibration.
+The trigger is generated periodically. The variable period is controlled by <code>selfTrigPeriod</code>.<br />
+Up on the generation of a internal trigger, a light injection pulse is send to the laser driver to inject light into the SiPM detectors and the readout sequence is ready to start. The width of the trigger pulse is changeable, determined by <code>LI_phase_adj</code>.<br />
+To get valid data, adjust the <code>selfTrigLeadPeriod</code>, <code>holdDelayTime</code> and <code>fifoWriteDelay</code> and make sure the equation shown in the Figure 2.3.1 is satisfied.</p>
+<p><img alt="Self Trigger Structure" src="../pics/self_trigger_structure.png" title="Self Trigger Structure" />
+<center>Figure 2.3.1</center></p>
+<ul>
+<li>T1 is summed up to <code>???</code> ns composed of <code>???</code> ns NIM to TTL conversion, 6 ns digial isolators, 1.5ns TTL to LVDS conversion and so on...</li>
+<li>T2 = hold_delay_time * 25 ns</li>
+<li>T3 = self_trig_lead_time * 25 ns</li>
+<li>T4 unknown</li>
+<li>T5 peaking time of readout chip - for SpirocA 25 ~ 175ns</li>
+</ul>
+<h3 id="external-trigger">External Trigger</h3>
+<p>Typically in a test beam setup an external trigger is generated by some trigger logic used to generate the coincidence with traversing particles. This trigger is processed ”asynchronous” to set the hold signal of the attached Front End modules via Up-Link control signals. The delay between trigger and hold signal is fixed(T1 in Figure 2.3.1), and it is strongly required to be as low as possible, since the total trigger delay between crossing particle and hold signal must be equal to the peaking time of readout chip in external trigger mode.</p>
+<p>Up on a trigger, the hold signal control on the Up-Link connector for all links is set to low (<code>???ns</code> delay) and the sampling sequence is started. During the sampling the Busy out signal is set high and new triggers during this time need to be gated in the trigger generation. Synchronization in the external trigger mode can be reached by sending at the beginning of the data acquisition a software Reset daq or a external Reset daq which resets all FIFOs and the readout finite state machine. A trigger counter is attached in the data which allows to collect synchronous data over several USB boards.</p>
+<hr />
+<h1 id="3-software-">3. <strong>--------------Software--------------</strong></h1>
+<h2 id="31-development-tools-chains">3.1 Development Tools &amp; Chains</h2>
+<h3 id="operation-system">Operation System:</h3>
+<ul>
+<li>ubuntu 12.04.3 amd64  </li>
+</ul>
+<h3 id="pre-install-software">Pre-install Software:</h3>
+<ul>
+<li>git, g++, qt4, libusb, dkpg, make, gcc, binutils, libx11, libxpm, libxft, libxext, qt4, libusb<br />
+<code>sudo apt-get install git dpkg-dev make g++ gcc binutils libx11-dev libxpm-dev libxft-dev \
+libxext-dev libqt4-dev libusb-dev libaio.so.1</code></li>
+<li><a href="http://www.fftw.org/fftw-3.3.4.tar.gz">FFTW</a><blockquote>
+<ol>
+<li>download source code and unzip the file to /opt/  </li>
+<li>under /opt/fftw-3.3.4, run <code>./configure</code></li>
+<li>under /opt/fftw-3.3.4, run <code>./make</code></li>
+<li>under /opt/fftw-3.3.4, run <code>sudo ./make install</code></li>
+</ol>
+</blockquote>
+</li>
+<li><a href="https://root.cern.ch/drupal/content/production-version-534">rootV5.34/32</a><blockquote>
+<ol>
+<li>download source code and unzip the file to /opt/  </li>
+<li>under /opt/root, run <code>sudo ./configure --enable-qt --with-fftw3-incdir="/opt/fftw-3.3.4/api" --with-fftw3-libdir="/opt/fftw-3.3.4/.libs"</code></li>
+<li>under /opt/root run <code>sudo make</code></li>
+</ol>
+</blockquote>
+</li>
+<li><a href="http://download.qt.io/official_releases/qtcreator/2.8/2.8.1/qt-creator-linux-x86_64-opensource-2.8.1.run">qtcreatorV2.8.1</a></li>
+</ul>
+<h3 id="source-code">Source Code</h3>
+<ul>
+<li>
+<p>Download source code from bitbucket</p>
+<blockquote>
+<p><code>git clone https://lihm09@bitbucket.org/RomanGreim/scifiusbboard.git</code>  </p>
+</blockquote>
+</li>
+<li>
+<p>install the QuicUSB Driver</p>
+<blockquote>
+<p><code>tar -xvf scifiusbboard/support/QuickUsbLibrary_v2.15.2_Linux.tar.gz</code><br />
+<code>cd scifiusbboard/support/QuickUsbLibrary_v2.15.2_Linux</code><br />
+<code>sudo ./install-linux.sh</code></p>
+</blockquote>
+</li>
+<li>
+<p>Install libiowkit</p>
+<blockquote>
+<p><code>cd scifiusbboard/utils/lisProgrammer/libiowkit</code><br />
+<code>./configure</code><br />
+<code>make</code><br />
+<code>sudo make install</code>  </p>
+</blockquote>
+</li>
+<li>
+<p>Compilation</p>
+<blockquote>
+<p><code>qmake</code><br />
+<code>make</code></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="32-cfgfile">3.2 cfgFile</h2>
+<p>The configure file of NewUSBBoard is the cfgFile/board+ID.cfg. It sets the values of many variables. These variables and their meanings are listed below:</p>
+<table>
+<thead>
+<tr>
+<th align="center">variable name</th>
+<th align="center">bits</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">pathToUsbBoardFirmware</td>
+<td align="center"></td>
+<td>path to NewUsbBoard Firmware(*.rbf)</td>
+</tr>
+<tr>
+<td align="center">usbBoardID</td>
+<td align="center"></td>
+<td>Board ID, comes from the QuickUSB ID. <br>See function boardID( ) in readout/UsbBoard.cpp.</td>
+</tr>
+<tr>
+<td align="center">withUplinkAdapter</td>
+<td align="center">1</td>
+<td>UsbBoard with or without a V1-&gt;V3 uplink adapter, with = 1, without = 0. <br>Not used in NewUsbBoard.</td>
+</tr>
+<tr>
+<td align="center">eventsPerAccess</td>
+<td align="center">16</td>
+<td>Number of events read from USB board per USB block transfer (restricted by FIFO buffer size).</td>
+</tr>
+<tr>
+<td align="center">modeSel</td>
+<td align="center">3</td>
+<td>Select mode to define the number of samples readout from the front end card, the same variable with FE_Type in firmware.<br>0=VA32<br>1=SPIROC_EPFL<br>2=SPIROC_Aachen<br>3=AMS_K_ladder<br>4=AMS_S_ladder<br>5=HPE_VA256<br>6=SPIROC_A<br>7=VATA64_EPFL</td>
+</tr>
+<tr>
+<td align="center">selfTrigEnable</td>
+<td align="center">1</td>
+<td>1=self trigger mode<br>0= external trigger mode</td>
+</tr>
+<tr>
+<td align="center">selfTrigPeriod</td>
+<td align="center">32</td>
+<td>number of 25ns clock cycles for the self trigger period.</td>
+</tr>
+<tr>
+<td align="center">selfTrigLeadPeriod</td>
+<td align="center">32</td>
+<td>number of 25ns clock cycles for the delay of trigger pulse to laser driver, which is designed for led calibration mode.</td>
+</tr>
+<tr>
+<td align="center">ledInjectionModeOn</td>
+<td align="center">1</td>
+<td>0=Disable the laser driver<br>1=enable the laser driver</td>
+</tr>
+<tr>
+<td align="center">holdDelayTime</td>
+<td align="center">16</td>
+<td>number of 25ns clock cycles delay between trigger and hold signal.</td>
+</tr>
+<tr>
+<td align="center">holdType</td>
+<td align="center">1</td>
+<td>Sel on each uplink 1..8:<br>fast hold time = 0 (no delay)<br>slow hold time = 1 (insert holdDelayTime)</td>
+</tr>
+<tr>
+<td align="center">uplinkID</td>
+<td align="center">8</td>
+<td>Make uplinkID=boardID*10 + uplink_order for better understanding.</td>
+</tr>
+<tr>
+<td align="center">uplinkUse</td>
+<td align="center">string</td>
+<td>Just a comment in software of the use for each uplink 1..8 void.(Don't use spaces)</td>
+</tr>
+<tr>
+<td align="center">calDelay</td>
+<td align="center"></td>
+<td><strong>not used now</strong></td>
+</tr>
+<tr>
+<td align="center">delayAfterReadout</td>
+<td align="center">16</td>
+<td>Number of 25ns clock cycles to wait after each event readout from the front end.</td>
+</tr>
+<tr>
+<td align="center">clkSelect</td>
+<td align="center">1</td>
+<td>0 = single clock sequence double<br>1 = clock sequence readout</td>
+</tr>
+<tr>
+<td align="center">fifoWriteDelay</td>
+<td align="center">16</td>
+<td>Select a 25ns clock cycle delay for the data valid at the input of the Fifos (delay to adjust with he sampling time of the ADC).</td>
+</tr>
+<tr>
+<td align="center">busyOutputSwitch</td>
+<td align="center">1</td>
+<td>Set this bit to 1 to impose busy output 1, its to fake a busy state.</td>
+</tr>
+<tr>
+<td align="center">biasSelect</td>
+<td align="center">8</td>
+<td>for bias Voltage, <strong>not used now</strong></td>
+</tr>
+<tr>
+<td align="center">biasVoltage</td>
+<td align="center">float</td>
+<td>for bias Voltage, <strong>not used now</strong></td>
+</tr>
+<tr>
+<td align="center">frontEndBoardType</td>
+<td align="center">3</td>
+<td>choose the right frontEnd board type and use the corresponding configure file to configure it.<br><strong>not used now</strong>.<br>Use <code>SpirocSlowControl</code> to configure the SpirocA board</td>
+</tr>
+<tr>
+<td align="center">executeFrontEndBoardConfiguration</td>
+<td align="center">1</td>
+<td>execute Configuration for each uplink: 0 do not configure, 1 configure</td>
+</tr>
+<tr>
+<td align="center">adjustDACMode</td>
+<td align="center">1</td>
+<td><strong>not used now</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="33-readout-test-system">3.3 Readout Test System</h2>
+<ul>
+<li>
+<p><code>readoutDebugtool</code> -- read and write the global registers in the firmware  </p>
+<blockquote>
+<p><code>readoutDebugtool -r reg_address</code><br />
+<code>readoutDebugtool -w reg_address reg_value</code></p>
+</blockquote>
+</li>
+<li>
+<p><code>adcView</code> -- Start the readout sequence. Readout and display the resultes in real time.</p>
+</li>
+<li><code>readoutTest</code> -- Start the readout sequence and readout pre-defined number of events before stop.</li>
+<li><code>lis_piggyback</code> -- Configure the laser driver holding on the piggyback board.</li>
+<li><code>SpirocSlowControl</code> -- Configure the SPIROC board.</li>
+</ul>
+<h2 id="34-data-analysis-system">3.4 Data Analysis System</h2>
+<ul>
+<li><code>noiseAnalysis</code></li>
+<li><code>rawAnalysis</code></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Operation_Manual/" class="btn btn-neutral float-right" title="Operation Manual"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../System_Structure/" class="btn btn-neutral" title="System Structure"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../System_Structure/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Operation_Manual/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
