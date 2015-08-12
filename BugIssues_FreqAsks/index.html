@@ -83,6 +83,25 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#hardware-problem">Hardware Problem</a></li>
+                
+                    <li><a class="toctree-l4" href="#one-blue-newusbboard">One Blue NewUSBBoard</a></li>
+                
+                    <li><a class="toctree-l4" href="#piggyback-board-dis-signal">Piggyback board DIS Signal</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#firmware-problem">Firmware Problem</a></li>
+                
+                    <li><a class="toctree-l4" href="#i2c-module">I2C module</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#software-problem">Software Problem</a></li>
+                
+                    <li><a class="toctree-l4" href="#data-from-fifo-to-usb">DATA from FIFO to USB</a></li>
+                
+                    <li><a class="toctree-l4" href="#adcview-or-other-data-acquisition-tools">adcView or other data acquisition tools</a></li>
+                
+            
             </ul>
         
     </li>
@@ -127,7 +146,24 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="hardware-problem">Hardware Problem</h1>
+<h3 id="one-blue-newusbboard">One Blue NewUSBBoard</h3>
+<p>One Blue NewUSBBoard doesn't work well. The situation is:<br />
+1. The FPGA cannot be programed by flash when USB is plugged in. But it can be programed by the host computer through QuickUSB module.<br />
+2. The ADC readout value is strange. It has two separate peaks with front-end board when SiPM is not working.<br />
+3. The voltage to Front-end board is 3.6v. It should be 3.3v?</p>
+<h3 id="piggyback-board-dis-signal">Piggyback board DIS Signal</h3>
+<p>Two resistors related to the DIS signal for Light Injection Module on piggyback board should be replaced.<br />
+These two resistors is divider resistors used to make the 3.3V signal down to 1.5v.<br />
+As there is a resistor on the Light Injection board in parallel with DIS signal, the value of these two divider resistors should be changed.</p>
+<h1 id="firmware-problem">Firmware Problem</h1>
+<h3 id="i2c-module">I2C module</h3>
+<p>Sometimes the I2C module doesn't work well between two compilation. This is caused by the intermediate files. Before recompiling the HDL Designer Project, remove all the intermediate files which are db(directory), simulation(directory), incremental_db(directory).</p>
+<h1 id="software-problem">Software Problem</h1>
+<h3 id="data-from-fifo-to-usb">DATA from FIFO to USB</h3>
+<p>The number of events which USB reads from the FPGA FIFO each time should be reconsidered.</p>
+<h3 id="adcview-or-other-data-acquisition-tools">adcView or other data acquisition tools</h3>
+<p>The adcView or other data acquisition tools should consider the process protection. When the computer is busy, the adcView always stops at a random place.</p>
               
             </div>
           </div>

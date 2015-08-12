@@ -75,13 +75,11 @@
                 
                     <li><a class="toctree-l4" href="#21-flex">2.1 Flex</a></li>
                 
-                    <li><a class="toctree-l4" href="#22-pacific">2.2 PACIFIC</a></li>
+                    <li><a class="toctree-l4" href="#22-spiroca">2.2 SpirocA</a></li>
                 
-                    <li><a class="toctree-l4" href="#23-spiroca">2.3 SpirocA</a></li>
+                    <li><a class="toctree-l4" href="#23-newusbboard">2.3 NewUSBBoard</a></li>
                 
-                    <li><a class="toctree-l4" href="#24-newusbboard">2.4 NewUSBBoard</a></li>
-                
-                    <li><a class="toctree-l4" href="#25-scifi-module-readout">2.5 SciFi Module Readout</a></li>
+                    <li><a class="toctree-l4" href="#24-scifi-module-readout">2.4 SciFi Module Readout</a></li>
                 
             
             </ul>
@@ -204,38 +202,11 @@ efficiency are chosen.</p>
 <p>The scintillating fibre ribbons are connected to the SiPM arrays, which in turn are connected to the front-end electronics through flex-PCB cables with a length of about 100 mm, as shown in Fig. 3.40.  The flexibility is required to make a 90 degree bend in order to connect the SiPMs to the Front-end (FE) boards located outside the cold volume. Cooling pipes for a liquid cooling system must also be fed through this enclosure to keep the silicon photo-detectors at -40 degree. Each detector is mounted on a separate flex-PCB and attached with connectors to the FE board.</p>
 <p><img alt="FLex-PCB" src="../pics/Flex.jpg" title="FLex-PCB" /></p>
 <p>An aluminium stiffener is glued to the back side of the detector region where it allows a good thermal contact to be made with the cooling pipe. The stiffeners also play a role of “heat spreaders”, providing a uniform temperature profile over a SiPM array. If required, the stiffener could also be implemented with a material that matches the detector substrate. A passive temperature sensor (NTC or PT1000) is mounted on the back side of the detector where a cut-out in the stiffener is foreseen. The temperature sensor is connected via the flex-PCB to the FE board and can be accessed by the slow control.  The temperature di↵erence between detectors on the same super-array needs to be within 1K to ensure good gain uniformity while using only one bias voltage per super-array. The bias voltage (~60V/1mA) is provided via the flex-PCB to the detector.</p>
-<h2 id="22-pacific">2.2 PACIFIC</h2>
-<p>All SiPM signals are amplified, shaped and digitised in the ASICs held on the front-end board. VATA64 and SPIROC are two commercial available ASICs, and the PACIFIC is being designed to meet the extra need and will be the final solution for the LHC SciFi tracker readout. As the PACIFIC is still under test, SpirocA with NewUSBBoard Readout is the temporary solution.</p>
-<p>PACIFIC, low-Power ASIC for the sCIntillating Fibre traCker, is being developed to process and digitise the analogue signal from the SiPM. It has four functions and is composed by four components:</p>
-<p><img alt="PACIFIC" src="../pics/PACIFIC.jpg" title="PACIFIC" /></p>
-<ol>
-<li>an input stage for amplification</li>
-<li>a faster shaper for shaping</li>
-<li>two interleaved gated intergrators for integrating</li>
-<li>a 2-bit ADC sampling at 40MHz for digitisation</li>
-</ol>
-<h3 id="input-stage">Input Stage</h3>
-<p>The input stage is a current mode preamplifier(current conveyor) with the current flowing from the SiPM anode to the circuit. It has high bandwidth(250MHz), low input impedance(20 Ω&lt; Z <sub>in</sub> &lt;40 Ω). The gain of the current conveyor is tunable by a factor of four through controllable DC voltage to deal with different SiPMs and different opearting conditions.</p>
-<h3 id="shaper">Shaper</h3>
-<p>The detector signals extend over several clock period because of light generation and propagation in the fibre and SiPM recovery. The shaper performs tail cancellation prior to gated intergration in order to minimise the spill over and the fluctuation of the integrated signal as function of the signal arrival time, i.e. to achieve a suffiient integration plateau.</p>
-<p>The implementation consists of a double pole-zero shaper. The first time constant cancels the slowest time constant of the SiPM response, the one associated to the internal SiPM capacitances and quenching resistor. The second one cancels the fastest one which is related to the parasitic interconnect capacitance and the input impedance of the preamplifier. The pole and zero frequency of both shapers are tunable, and they have been calculated to be able to operate with the very different time constants of the Ketek and Hamamatsu SiPMs.</p>
-<h3 id="the-interleaved-gated-integrator">The Interleaved Gated Integrator</h3>
-<p>Two interleaved gated integrators are used to avoid any dead time during the acquisition, when the first integrator is working, the second one is reset and vice versa. Each gated integrator works at a frequency of 20MHz in order to fit in the 40MHz general frequency. The ADC will convert the value at the output of the integrator each 25ns just before the ADC switches from one integrator to the other one. With this solution, the integration is still available at the output of the channel even if the signal arrives between two clock cycles.</p>
-<h3 id="pulse-height-information-using-comparators">Pulse-height information using comparators</h3>
-<p>The digitisation of the analogue signal from the gated integrators is done with a 2-bit flash ADC with a non linear scale running at 40MS/s. Hence, three comparators are used with their individual threshold, named Seed, Neighbour and High threshold. They are individually set using a 6-bit DAC. Moreover, the threshold value is configurable for each SiPM channel in order to be able to cope with the gain variation and the pedestals. These three thresholds are used in clusterisation algorithm, which is illustrated in Fig. 3.51, and uses four thresholds:</p>
-<p><img alt="clusterisation algorithm" src="../pics/clusterisation.jpg" title="clusterisation algorithm" /></p>
-<ul>
-<li>The seed threshold: The first step in the clustering algorithm is to find cluster candidates. The seed threshold is a necessary but not suffcient condition for a cluster. For a channel found above the seed threshold, its neighbours need to be tested.</li>
-<li>The neighbour threshold: To include a maximum of the signal the neighbours to a channel above the seed threshold can be tested with a lower threshold. All channels above the neighbour threshold are included in a cluster.</li>
-<li>The high threshold: Channels with strong signal above the high threshold are sufficient to form a cluster without any other conditions.</li>
-<li>The cluster sum threshold: There are two possibilities to confirm a cluster. One, if a channel in the cluster has reached the high threshold. Two, if a cluster contains a seed threshold channel and at least one more other channel above the neighbour threshold. This last step allows to remove a large fraction of the SiPM noise. The cluster position is calculated by computing the barycentre b using a weighted average with a 2-bit inter-channel precision.</li>
-</ul>
-<p>Finally, the data recorded for each cluster are its position, a 7-bit SiPM channel number and a 2-bit inter strip position corresponding to 1/4 of a strip pitch; the number of hits in the cluster; and the total signal, the sum of the ADC values of the neighbouring strips.</p>
-<h2 id="23-spiroca">2.3 SpirocA</h2>
+<h2 id="22-spiroca">2.2 SpirocA</h2>
 <p>SPIROC is an auto-triggered, bi-gain, 36-channel ASIC which allows to measure on each channel the charge from one photoelectron to 2000 and the time with a 100ps accurate TDC.  The integrated ASIC components allow 16 selectable pre-amplification gain factors (with output gain values from 3 to 100 mV/pC), and seven CR(RC)<sup>2</sup> shaping times from 25 to 175 ns. After shaping, the signal is held (under the control of signal hold) at its maximum amplitude with a track and hold method. An analogue memory array with a depth of 16 for each channel is used to store the time information and the charge measurement. The data are then stored in a 4 kbytes RAM. An adjustable 8-bit DAC (0-4.5 V) in the ASIC allows individual adjustment of the SiPM forward voltage for each one of the 36 channels.</p>
 <p>A schematic view of a single channel of the ASIC chip is given below:
 <img alt="SpirocA channel structure" src="../pics/SpirocA.jpg" title="SpirocA channel structure" /></p>
-<h2 id="24-newusbboard">2.4 NewUSBBoard</h2>
+<h2 id="23-newusbboard">2.3 NewUSBBoard</h2>
 <p>USBBoard is designed to control, digitize and readout multichannel readout ASICs for SiPM detectors.</p>
 <p>The typical data acquisition setup is:
 The small signal (typically 10<sup>6</sup> electrons per photo electron of the SiPM detectors) is pre-amplifiered and shaped through a integrated multichannel front-end chips, such as SpirocA or VATA64. The front-end ASIC acts as a signal amplifier and analog signal multiplexer and connects with the USBBoard through a uplink-cable. The ASIC is controlled via a simple protocol using a Hold, Shift, Clk and Analog_output signal. The Analog_output which is sampled under the control of Hold signal carries the data information from the SiPMs. The digital interface to control the output multiplexer is implemented via a local FPGA which acts as glue logic and signal interpreter between USBBoard Up-Link and ASIC digital interface.</p>
@@ -253,7 +224,7 @@ The small signal (typically 10<sup>6</sup> electrons per photo electron of the S
 <li>Flash chip EPCS64 is used and the FPGA will be configured automatically after power on.</li>
 <li>Three different Front-end Board are supported, includes VA32, VA64 and SpirocA. Jumpers are needed to choose the right Front-end board.</li>
 </ul>
-<h2 id="25-scifi-module-readout">2.5 SciFi Module Readout</h2>
+<h2 id="24-scifi-module-readout">2.4 SciFi Module Readout</h2>
 <p>The SciFi Module Readout which is composed of SpirocA and NewUSBBoard is showed below:</p>
 <p><img alt="SpirocA with NewUSBBoard" src="../pics/SpirocA_NewUSBBoard.jpg" title="The SciFi Module Readout System" /></p>
 <p>We defined that one SciFi Module Readout System includes:<br />
