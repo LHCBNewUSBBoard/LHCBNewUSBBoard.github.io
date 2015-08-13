@@ -184,6 +184,11 @@
             "location": "/BugIssues_FreqAsks/#software-problem", 
             "text": "DATA from FIFO to USB  The number of events which USB reads from the FPGA FIFO each time should be reconsidered.  adcView or other data acquisition tools  The adcView or other data acquisition tools should consider the process protection. When the computer is busy, the adcView always stops at a random place.", 
             "title": "Software Problem"
+        }, 
+        {
+            "location": "/about/", 
+            "text": "The materials above are the summary of my three months great time in EPFL. I'm very happy to work with Snow, Guido, Axel, Oliver, Maris, Maxim, Bruce. Time always goes fast, and let this small site to keep the short but precious summer time in Swissland.", 
+            "title": "About"
         }
     ]
 }

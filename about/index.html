@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bug Issues & Freq Asks - My Docs</title>
+  <title>About - My Docs</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Bug Issues & Freq Asks";
+    var mkdocs_page_name = "About";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -78,38 +78,19 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Bug Issues & Freq Asks</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#hardware-problem">Hardware Problem</a></li>
-                
-                    <li><a class="toctree-l4" href="#one-blue-newusbboard">One Blue NewUSBBoard</a></li>
-                
-                    <li><a class="toctree-l4" href="#piggyback-board-dis-signal">Piggyback board DIS Signal</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#firmware-problem">Firmware Problem</a></li>
-                
-                    <li><a class="toctree-l4" href="#i2c-module">I2C module</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#software-problem">Software Problem</a></li>
-                
-                    <li><a class="toctree-l4" href="#data-from-fifo-to-usb">DATA from FIFO to USB</a></li>
-                
-                    <li><a class="toctree-l4" href="#adcview-or-other-data-acquisition-tools">adcView or other data acquisition tools</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../BugIssues_FreqAsks/">Bug Issues & Freq Asks</a>
         
     </li>
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../about/">About</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">About</a>
+        
+            <ul>
+            
+            </ul>
         
     </li>
 <li>
@@ -136,7 +117,7 @@
     
       
     
-    <li>Bug Issues & Freq Asks</li>
+    <li>About</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -146,24 +127,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="hardware-problem">Hardware Problem</h1>
-<h3 id="one-blue-newusbboard">One Blue NewUSBBoard</h3>
-<p>One Blue NewUSBBoard doesn't work well. The situation is:<br />
-1. The FPGA cannot be programed by flash when USB is plugged in. But it can be programed by the host computer through QuickUSB module.<br />
-2. The ADC readout value is strange. It has two separate peaks with front-end board when SiPM is not working.<br />
-3. The voltage to Front-end board is 3.6v. It should be 3.3v?</p>
-<h3 id="piggyback-board-dis-signal">Piggyback board DIS Signal</h3>
-<p>Two resistors related to the DIS signal for Light Injection Module on piggyback board should be replaced.<br />
-These two resistors is divider resistors used to make the 3.3V signal down to 1.5v.<br />
-As there is a resistor on the Light Injection board in parallel with DIS signal, the value of these two divider resistors should be changed.</p>
-<h1 id="firmware-problem">Firmware Problem</h1>
-<h3 id="i2c-module">I2C module</h3>
-<p>Sometimes the I2C module doesn't work well between two compilation. This is caused by the intermediate files. Before recompiling the HDL Designer Project, remove all the intermediate files which are db(directory), simulation(directory), incremental_db(directory).</p>
-<h1 id="software-problem">Software Problem</h1>
-<h3 id="data-from-fifo-to-usb">DATA from FIFO to USB</h3>
-<p>The number of events which USB reads from the FPGA FIFO each time should be reconsidered.</p>
-<h3 id="adcview-or-other-data-acquisition-tools">adcView or other data acquisition tools</h3>
-<p>The adcView or other data acquisition tools should consider the process protection. When the computer is busy, the adcView always stops at a random place.</p>
+                <p>The materials above are the summary of my three months great time in EPFL. I'm very happy to work with Snow, Guido, Axel, Oliver, Maris, Maxim, Bruce. Time always goes fast, and let this small site to keep the short but precious summer time in Swissland.</p>
               
             </div>
           </div>
@@ -171,10 +135,8 @@ As there is a resistor on the Light Injection board in parallel with DIS signal,
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../about/" class="btn btn-neutral float-right" title="About"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../Operation_Manual/" class="btn btn-neutral" title="Operation Manual"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../BugIssues_FreqAsks/" class="btn btn-neutral" title="Bug Issues & Freq Asks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -200,10 +162,8 @@ As there is a resistor on the Light Injection board in parallel with DIS signal,
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../Operation_Manual/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../BugIssues_FreqAsks/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
