@@ -1150,17 +1150,14 @@ To get valid data, adjust the <code>selfTrigLeadPeriod</code>, <code>holdDelayTi
 <li>Measure the delay between self-trigger and actual analog output of front-end board (two pins of c59, SpirocA works in trace mode)  </li>
 <li>adjust the holdDelayTime and selfTrigPeriod to make these two signals in alignment.  </li>
 </ol>
-<h3 id="332-configure-the-spiroca">3.3.2 Configure the SpirocA</h3>
+<h3 id="332-configure-the-spiroca-for-the-first-timeonly-do-it-once">3.3.2 Configure the SpirocA for the first time(only do it once)</h3>
 <p>Use SpirocSlowControl to configure the SpirocA:  </p>
 <ol>
 <li>Use Hold/hold_B rather than Trig.</li>
-<li>Set the DAC to 4.5v. (The actual BIAS Voltage of SiPM is "BIAS - 4.5") (only do itonce)</li>
+<li>Set the DAC to 4.5v. (The actual BIAS Voltage of SiPM is "BIAS - 4.5") (only do it once)</li>
 <li>Set the proper board ID and uplink.</li>
 </ol>
-<p>for the first time:<br />
-<code>./spirocSlowControl -p ../cfgFiles/ -b board_ID -u uplink_order -d 0_0_0_0_0_0_0_0 -i 1</code>
-for the rest time:<br />
-<code>./spirocSlowControl -p ../cfgFiles/ -b board_ID -u uplink_order -i 1</code>  </p>
+<p><code>./spirocSlowControl -p ../cfgFiles/ -b board_ID -u uplink_order -d 0_0_0_0_0_0_0_0 -i 1</code></p>
 <ul>
 <li>-p : the directory of configure file</li>
 <li>-b : board ID</li>
@@ -1192,13 +1189,21 @@ for the rest time:<br />
 <h3 id="334-acquire-the-pedestal">3.3.4 Acquire the Pedestal</h3>
 <p>Use adcView to acquire data.<br />
 <code>./adcView ../cfgFiles</code></p>
-<h3 id="334-set-the-bias-high-voltage">3.3.4 Set the BIAS (high Voltage)</h3>
+<h3 id="335-set-the-bias-high-voltage">3.3.5 Set the BIAS (high Voltage)</h3>
 <p>Voltage is 62V and Current Limit is 100uA.<br />
 Typically the dark current is around 1uA when the LED doesn't work.</p>
-<h3 id="335-preliminary-data-acquisition">3.3.5 Preliminary data acquisition</h3>
+<h3 id="336-configure-the-spiroca-for-the-second-time">3.3.6 Configure the SpirocA for the second time</h3>
+<p><code>./spirocSlowControl -p ../cfgFiles/ -b board_ID -u uplink_order -i 1</code>  </p>
+<ul>
+<li>-p : the directory of configure file</li>
+<li>-b : board ID</li>
+<li>-u : uplink order, starts from 0</li>
+<li>-i : Select the trigger, 1:Trigger from hold_B;0:Trigger from Trig</li>
+</ul>
+<h3 id="337-preliminary-data-acquisition">3.3.7 Preliminary data acquisition</h3>
 <p>Use adcView to acquire data.</p>
 <p><img alt="EPFL SiPM Test Results" src="../pics/EPFL_SiPM_Test_Results.png" title="EPFL SiPM Test Results" /></p>
-<h3 id="335-record-data-for-further-analysis">3.3.5 Record Data for Further Analysis</h3>
+<h3 id="338-record-data-for-further-analysis">3.3.8 Record Data for Further Analysis</h3>
 <p>Use hdReadoutTest or ReadoutTest.</p>
               
             </div>
